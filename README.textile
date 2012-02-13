@@ -34,16 +34,18 @@ h3. Configuration
 
 Add an "etherpad" configuration section to "config/configuration.yml" in which you define the etherpad host to use:
 
-<pre><code>etherpad:
-  host: https://etherpad.example.com
+<pre><code>default:
+  etherpad:
+    host: https://etherpad.example.com
 </code></pre>
 
 You can also list any of the embed arguments to replace defaults, for example:
 
-<pre><code>etherpad:
-  host: https://etherpad.example.com
-  showLineNumbers: true
-  useMonospaceFont: true
+<pre><code>default:
+  etherpad:
+    host: https://etherpad.example.com
+    showLineNumbers: true
+    useMonospaceFont: true
 </code></pre>
 
 
