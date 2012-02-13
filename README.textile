@@ -28,7 +28,7 @@ Navigate to:
 @[redmine_install_path]/vendors/plugins@
 
 Clone this repo:
-@git clone git://github.com/yourcelf/redmine_etherpad.git
+@git clone git://github.com/yourcelf/redmine_etherpad.git@
 
 h3. Configuration
 
