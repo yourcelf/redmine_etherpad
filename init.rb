@@ -10,7 +10,7 @@ Redmine::Plugin.register :redmine_etherpad do
   author 'Charlie DeTar'
   description 'Embed etherpad-lite pads in redmine wikis.'
   version '0.0.1'
-  url 'https://github.com/yourcelf/redmine-etherpad'
+  url 'https://github.com/yourcelf/redmine_etherpad'
   author_url 'https://github.com/yourcelf'
 
   Redmine::WikiFormatting::Macros.register do
