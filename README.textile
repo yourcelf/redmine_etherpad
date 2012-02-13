@@ -1,0 +1,41 @@
+h1. What does it do?
+
+This redmine plugin adds a macro in your redmine wikis, which allows the embedding of etherpads.  It provides the same result as "this hack":http://rschulte.com/blog/2011/etherpad-and-redmine-hack-how-we-are-embedding-collaborative-documents-redmine, but more easily, and without the unsafety of allowing arbitrary html.
+
+h2. Macro: etherpad()
+
+To use, just add `{{etherpad(nameOfPad)}}` to the issue/wiki/page in which to embed a pad.
+
+Requires at least one argument, the name of the etherpad to embed.
+
+Other arguments should be listed in "key=val" format, and include:
+
+* width: the width of the iframe (e.g. "640px", "100%"), default=640px.
+* height: the height of the iframe (e.g. ("800px"), default=480px.
+* showControls: true/false (default true)
+* showChat: true/false (default true)
+* showLineNumbers: true/false (default false)
+* useMonospaceFont: true/false (default false)
+* noColors: true/false (default false)
+
+Example:
+
+<pre><code>{{etherpad(myHotPad, useMonospaceFont=true, width=100%)}}</code></pre>
+
+h2. Configuration
+
+Add an "etherpad" configuration section to "config/configuration.yml" in which you define the etherpad host to use:
+
+<pre><code>etherpad:
+  host: https://etherpad.example.com
+</code></pre>
+
+You can also list any of the embed arguments to replace defaults, for example:
+
+<pre><code>etherpad:
+  host: https://etherpad.example.com
+  showLineNumbers: true
+  useMonospaceFont: true
+</code></pre>
+
+
