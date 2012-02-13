@@ -20,6 +20,8 @@ Redmine::Plugin.register :redmine_etherpad do
       unless conf and conf['host'] 
         raise "Please define etherpad parameters in configuration.yml."
       end
+
+      # Defaults from configuration.
       controls = {
         'showControls' => conf.fetch('showControls', true),
         'showChat' => conf.fetch('showChat', true),
@@ -30,6 +32,7 @@ Redmine::Plugin.register :redmine_etherpad do
         'height' => conf.fetch('height', '480px'),
       }
 
+      # Override defaults with given arguments.
       padname, *params = args
       for param in params
         key, val = param.strip().split("=")
@@ -40,6 +43,7 @@ Redmine::Plugin.register :redmine_etherpad do
         end
       end
 
+      # Set current user name.
       if User.current
         controls['userName'] = User.current.name
       elsif conf.fetch('loginRequired', true)
@@ -56,7 +60,7 @@ Redmine::Plugin.register :redmine_etherpad do
         end
       end
       
-      return CGI::unescapeHTML("<iframe src='#{conf['host']}/p/#{padname}?#{hash_to_querystring(controls)}' width='#{width}' height='#{height}'></iframe>")
+      return CGI::unescapeHTML("<iframe src='#{conf['host']}/p/#{URI.encode(padname)}?#{hash_to_querystring(controls)}' width='#{width}' height='#{height}'></iframe>")
     end
   end
 end
