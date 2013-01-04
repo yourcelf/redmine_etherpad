@@ -60,7 +60,7 @@ Redmine::Plugin.register :redmine_etherpad do
         end
       end
       
-      return CGI::unescapeHTML("<iframe src='#{conf['host']}/p/#{URI.encode(padname)}?#{hash_to_querystring(controls)}' width='#{width}' height='#{height}'></iframe>")
+      return CGI::unescapeHTML("<iframe src='#{conf['host']}/p/#{URI.encode(padname)}?#{hash_to_querystring(controls)}' width='#{width}' height='#{height}'></iframe>").html_safe
     end
   end
 end

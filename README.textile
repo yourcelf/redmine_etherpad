@@ -24,11 +24,20 @@ Example:
 
 h2. Installation
 
-Navigate to:
-@[redmine_install_path]/vendors/plugins@
 
-Clone this repo:
+On Redmine 1.x, Navigate to:
+@[redmine_install_path]/vendors/plugins@
+On Redmine >= 2.1, navigate to:
+@[redmine_install_path]/plugins@
+
+Clone this repo.
 @git clone git://github.com/yourcelf/redmine_etherpad.git@
+
+If you are using redmine 1.x, checkout the @redmine_1.x@ branch:
+
+@git checkout -b redmine_1.x origin/redmine_1.x@
+
+For redmine 2.1+, just use master.
 
 h3. Configuration
 
